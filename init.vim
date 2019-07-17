@@ -7,6 +7,7 @@ Plug 'fatih/vim-go'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -28,6 +29,7 @@ tmap <Esc> <C-\><C-n>
 " settings
 
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.git$']
 
 let g:go_fmt_command="goimports"
 
