@@ -17,6 +17,9 @@ call plug#end()
 
 nmap <C-n> :NERDTreeToggle<CR>
 
+nmap <C-o> :FZF<CR>
+nmap <C-f> :Lines<CR> 
+
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -46,3 +49,14 @@ set t_Co=256
 " add yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" add Jenkinsfile
+au! BufNewFile,BufReadPost Jenkinsfile set filetype=groovy
+
+" Hide status line when open fzf window
+augroup fzf_hide_statusline
+    autocmd!
+    autocmd! FileType fzf
+    autocmd  FileType fzf set laststatus=0 noshowmode noruler
+                \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
