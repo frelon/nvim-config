@@ -1,4 +1,4 @@
-" plugins
+" --- Plugins ---
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -13,13 +13,15 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-" keybindings 
+" --- Keybindings ---
 
 nmap <C-n> :NERDTreeToggle<CR>
 
+" FZF
 nmap <C-o> :FZF<CR>
 nmap <C-f> :Lines<CR> 
 
+" Window management
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -29,9 +31,13 @@ tmap <C-j> <C-w>j
 tmap <C-k> <C-w>k
 tmap <C-l> <C-w>l
 
-tmap <Esc> <C-\><C-n>
+" Split to terminal
+nmap <C-s>t :split<CR><C-j>:resize 15<CR>:terminal<CR>i
 
-" settings
+" Escape terminal
+tmap <Esc> <C-\><C-n>:q<CR>
+
+" --- Settings ---
 
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$']
